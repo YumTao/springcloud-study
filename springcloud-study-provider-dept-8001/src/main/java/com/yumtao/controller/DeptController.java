@@ -23,7 +23,7 @@ public class DeptController {
     }
 
     @GetMapping(value = "/dept/findById/{deptNo}")
-    public Dept findById(Long deptNo) {
+    public Dept findById(@PathVariable("deptNo") Long deptNo) {
         return deptService.findById(deptNo);
     }
 

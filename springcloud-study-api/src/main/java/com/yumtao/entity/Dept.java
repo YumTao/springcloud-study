@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Dept {
 
-    private String deptNo;
+    private Long deptNo;
 
     private String deptName;
 

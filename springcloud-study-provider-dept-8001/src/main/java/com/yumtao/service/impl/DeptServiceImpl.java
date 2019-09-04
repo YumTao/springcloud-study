@@ -21,7 +21,8 @@ public class DeptServiceImpl implements DeptService {
 
     @Override
     public Dept findById(Long deptNo) {
-        return deptMapper.selectByPrimaryKey(deptNo);
+        Dept query = Dept.builder().deptNo(deptNo).build();
+        return deptMapper.selectByPrimaryKey(query);
     }
 
     @Override
