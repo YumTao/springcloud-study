@@ -57,3 +57,11 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
 
+
+
+#log
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
