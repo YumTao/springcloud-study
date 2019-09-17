@@ -1,0 +1,13 @@
+server:
+  port: 7003
+
+# eureka配置
+eureka:
+  instance:
+    hostname: eureka.server3.com
+    prefer-ip-address: true # 服务ip显示
+  client:
+    registerWithEureka: false #不向注册中心注册自己
+    fetchRegistry: false # 不去检索注册中心中的服务
+    serviceUrl:
+      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/

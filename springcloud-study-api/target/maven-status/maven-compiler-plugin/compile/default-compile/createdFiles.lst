@@ -1,0 +1,5 @@
+com/yumtao/entity/Dept.class
+com/yumtao/hystrix/DeptServiceFallBackFactory.class
+com/yumtao/api/DeptService.class
+com/yumtao/hystrix/DeptServiceFallBackFactory$1.class
+com/yumtao/entity/Dept$DeptBuilder.class

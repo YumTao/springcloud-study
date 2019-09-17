@@ -1,0 +1,6 @@
+server:
+  port: 90
+
+spring:
+  application:
+    name: study-springcloud-hystrix-dashboard  #应用名称

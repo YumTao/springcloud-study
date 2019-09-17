@@ -1,8 +1,28 @@
 server:
   port: 80
 
-logging:
-  level:
-    org:
-      springframework:
-        web: debug
+spring:
+  application:
+    name: study-springcloud-consumer  #应用名称
+
+eureka:
+  client:
+    registerWithEureka: false #不向注册中心注册自己
+    serviceUrl:
+      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/
+#    instance-id: springcloud-study-consumer-80  #注册到eureka显示的实例名称
+  instance:
+    instanceId: springcloud-study-consumer-80  #注册到eureka显示的实例名称
+
+
+info:
+  app:name: study-springcloud-consumer-80
+  company:name: www.yumtao.com
+  build:
+    artifactId: springcloud-study-consumer-dept-80
+    version: 1.0-SNAPSHOT
+
+
+STUDY-SPRINGCLOUD-DEPT:
+  ribbon:
+    NFLoadBalancerRuleClassName: myconfig.MyRoundRobinRule

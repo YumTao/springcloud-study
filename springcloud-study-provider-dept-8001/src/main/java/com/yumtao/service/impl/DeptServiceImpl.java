@@ -19,10 +19,20 @@ public class DeptServiceImpl implements DeptService {
         deptMapper.insert(dept);
     }
 
+//    @HystrixCommand(fallbackMethod = "defaultDept")
     @Override
     public Dept findById(Long deptNo) {
-        return deptMapper.selectByPrimaryKey(deptNo);
+        Dept result = deptMapper.selectByPrimaryKey(deptNo);
+        if (null == result) {
+            throw new RuntimeException("部门不存在");
+        }
+
+        return result;
     }
+
+//    public Dept defaultDept(Long deptNo) {
+//        return Dept.builder().deptName("服务不可用").build();
+//    }
 
     @Override
     public List<Dept> findAll() {

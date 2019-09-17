@@ -1,5 +1,3 @@
-package com.yumtao.test;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +30,14 @@ public class DDLLockTest {
             stmt = conn.createStatement();
             // 4、定义操作的SQL语句
             List<String> sqlList = new ArrayList<>();
-            String sqlTemplate = "insert into guoguo_category (name, is_used) VALUES ('xibalu'%s, 0);";
+            String sqlTemplate = "insert into guoguo_category (name, is_used) VALUES ('xibalu%s', 0);";
+
+
             for (int i = 0; i < 1000000; i++) {
                 String sql = String.format(sqlTemplate, i);
                 System.out.println(sql);
-                rs = stmt.executeQuery(sql);
+                stmt.execute(sql);
             }
-
 
             // 5、执行数据库操作
 

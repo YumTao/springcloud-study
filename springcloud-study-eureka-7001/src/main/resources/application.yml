@@ -1,0 +1,14 @@
+server:
+  port: 7001
+
+# eureka配置
+eureka:
+  instance:
+    hostname: eureka.server1.com
+    prefer-ip-address: true # 服务ip显示
+  client:
+    registerWithEureka: false #不向注册中心注册自己
+    fetchRegistry: false # 不去检索注册中心中的服务
+    serviceUrl:
+      # 集群配置时，配置其他节点的url, 用逗号分隔
+      defaultZone: http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/

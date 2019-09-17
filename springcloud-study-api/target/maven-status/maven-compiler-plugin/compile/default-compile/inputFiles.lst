@@ -1,1 +1,3 @@
+/Users/yangqintao/software/workspace/springcloudstudy/springcloud-study-api/src/main/java/com/yumtao/api/DeptService.java
 /Users/yangqintao/software/workspace/springcloudstudy/springcloud-study-api/src/main/java/com/yumtao/entity/Dept.java
+/Users/yangqintao/software/workspace/springcloudstudy/springcloud-study-api/src/main/java/com/yumtao/hystrix/DeptServiceFallBackFactory.java

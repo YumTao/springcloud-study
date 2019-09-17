@@ -1,0 +1,40 @@
+#配置服务器信息
+server:
+  port: 91
+  #context-path: /study 配置根目录
+
+
+#数据库信息配置
+spring:
+  application:
+    name: study-springcloud-zuul-91  #应用名称
+
+
+# eureka配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/
+    healthcheck:
+      enabled: true
+
+  instance:
+    instanceId: springcloud-study-zuul-91  #注册到eureka显示的实例名称
+
+info:
+  app:name: study-springcloud-zuul-91
+  company:name: www.yumtao.com
+  build:
+    artifactId: $project.artifactId
+    version: $project.version
+
+
+# zuul配置
+zuul:
+  ignoredServices: '*'
+  routes:
+    users:
+      path: /mydept/**
+      serviceId: study-springcloud-dept
+
+

@@ -49,5 +49,19 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!-- spring cloud -->
+        <!-- SpringCloud  Eureka  注册中心依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!-- SpringCloud ribbon 客户端负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+
+
     </dependencies>
 </project>

@@ -1,0 +1,33 @@
+server:
+  port: 81
+
+spring:
+  application:
+    name: study-springcloud-consumer-feign  #应用名称
+
+eureka:
+  client:
+    registerWithEureka: false #不向注册中心注册自己
+    serviceUrl:
+      defaultZone: http://eureka.server1.com:7001/eureka/,http://eureka.server2.com:7002/eureka/,http://eureka.server3.com:7003/eureka/
+#    instance-id: springcloud-study-consumer-80  #注册到eureka显示的实例名称
+  instance:
+    instanceId: springcloud-study-consumer-80  #注册到eureka显示的实例名称
+
+
+info:
+  app:name: study-springcloud-consumer-80
+  company:name: www.yumtao.com
+  build:
+    artifactId: ${project.artifactId}
+    version: ${project.version}
+
+# ribbon 自定义负载均衡策略
+STUDY-SPRINGCLOUD-DEPT:
+  ribbon:
+    NFLoadBalancerRuleClassName: myconfig.MyRoundRobinRule
+
+# feign开启hystrix
+feign:
+  hystrix:
+    enabled: true

@@ -69,5 +69,23 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
 
+        <!-- actuator监控信息完善,用户eureka 服务信息展示 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- spring cloud -->
+        <!-- SpringCloud  Eureka  注册中心依赖 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <!-- spring-cloud hystrix 限流降级 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
     </dependencies>
 </project>

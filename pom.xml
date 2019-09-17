@@ -12,6 +12,15 @@
         <module>springcloud-study-api</module>
         <module>springcloud-study-provider-dept-8001</module>
         <module>springcloud-study-consumer-dept-80</module>
+        <module>springcloud-study-eureka-7001</module>
+        <module>springcloud-study-config</module>
+        <module>springcloud-study-eureka-7002</module>
+        <module>springcloud-study-eureka-7003</module>
+        <module>springcloud-study-provider-dept-8002</module>
+        <module>springcloud-study-provider-dept-8003</module>
+        <module>springcloud-study-consumer-feign-81</module>
+        <module>springcloud-study-hystrix-dashboard-90</module>
+        <module>springcloud-study-zuul-91</module>
     </modules>
 
     <properties>
@@ -106,4 +115,25 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
