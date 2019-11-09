@@ -21,6 +21,7 @@
         <module>springcloud-study-consumer-feign-81</module>
         <module>springcloud-study-hystrix-dashboard-90</module>
         <module>springcloud-study-zuul-91</module>
+        <module>springcloud-study-config-client-50</module>
     </modules>
 
     <properties>

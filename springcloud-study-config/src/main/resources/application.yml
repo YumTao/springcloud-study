@@ -1,4 +1,30 @@
 server:
-  port: 8888
+  port: 6001
 
-spring.cloud.config.server.git.uri: file://${user.home}/config-repo
+spring:
+  application:
+    name: springcloud-study-config
+
+spring.cloud.config.server.git.uri: file://${user.home}/yqt/tmp/config/blob_conf/config
+
+# 配置 kafka 服务器的地址和端口
+spring.kafka.bootstrap-servers: 120.79.48.63:9092
+#spring.kafka.bootstrap-servers: localhost:9092
+# 配置kafka 服务器的Topic （可理解为创建消息队列）
+spring.kafka.consumer.group-id: dynamic_change
+
+spring.cloud.bus.refresh.enabled: true
+
+spring.cloud.stream.kafka.binder.zkNodes: 120.79.48.63
+#spring.cloud.stream.kafka.binder.zkNodes: localhost
+spring.cloud.stream.kafka.binder.defaultZkPort: 2281
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+
+
+#动态刷新配置 ---需要忽略权限拦截

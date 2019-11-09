@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: config-client
+  profiles:
+    active: dev,mysql
+
+
+  cloud:
+    config:
+      uri: http://localhost:6001
+      failFast: true
+      name: config-client
+      label: master
+
+    bus:
+      refresh:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          zkNodes: 120.79.48.63
+#          zkNodes: localhost
+          defaultZkPort: 2281
+
+
+  kafka:
+    bootstrap-servers:
+#        - localhost:9092
+      - 120.79.48.63:9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
